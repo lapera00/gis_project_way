@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>후아유 : 로그인</title>
+    <link rel="stylesheet" href="./css/style_login.css" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <section class="login-form">
+      <h1>WHO ARE YOU</h1>
+      <form action="http://172.31.99.211:3003/login" method="post">
+        <div class="int-area">
+          <input type="text" name="id" id="id" autocomplete="off" required />
+          <label for="id">ID</label>
+        </div>
+        <div class="int-area">
+          <input
+            type="password"
+            name="pw"
+            id="pw"
+            autocomplete="off"
+            required
+          />
+          <label for="pw">PASSWORD</label>
+        </div>
+        <div class="btn-area">
+          <button id="btn" type="submit">LOGIN</button>
+        </div>
+      </form>
+      <div class="caption">
+        <a href="http://127.0.0.1:5502/main2/public/terms.html">회원가입</a>
+      </div>
+    </section>
+
+    <script>
+      let id = $("#id");
+      let pw = $("#pw");
+      let btn = $("#btn");
+
+      $(btn).on("click", function () {
+        if ($(id).val() == "") {
+          $(id).next("label").addClass("warning");
+          setTimeout(function () {
+            $("label").removeClass("warning");
+          }, 1500);
+        } else if ($(pw).val() == "") {
+          $(pw).next("label").addClass("warning");
+          setTimeout(function () {
+            $("label").removeClass("warning");
+          }, 1500);
+        }
+      });
+    </script>
+  </body>
+</html>

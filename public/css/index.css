@@ -1,0 +1,131 @@
+@charset "utf-8";
+@font-face {
+  font-family: NotoSansKR;
+  src: url("../font/NotoSansKR-Regular.otf") format("otf");
+}
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+body {
+  background: linear-gradient(rgb(114, 146, 250), rgba(96, 127, 175, 0.7));
+  font-family: "NanumSquare", sans-serif;
+}
+header .left {
+  float: left;
+  padding: 43px 0 0 78px;
+}
+header a {
+  color: rgb(100, 100, 100);
+}
+header h1 {
+  float: left;
+  padding: 0 108px 0 0;
+}
+header h1 a {
+  display: block;
+  width: 350px;
+  height: 41px;
+  background: url("../images/title_B.png");
+  color: transparent;
+}
+header nav a {
+  display: block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 17px;
+  font-weight: bold;
+}
+header nav a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 13px;
+  width: 0;
+  height: 1px;
+  background: rgb(100, 100, 100);
+  transition: width 0.5s;
+}
+header nav a:hover:before {
+  width: 100%;
+}
+header .close,
+header .all,
+header .left > div > div,
+header h2 {
+  display: none;
+}
+header .left > div {
+  float: left;
+}
+header .left > div nav li {
+  float: left;
+  padding: 0 30px 0 0;
+}
+header > ul {
+  float: right;
+  padding: 51px 40px 0 0;
+}
+header > ul li {
+  float: left;
+  margin-left: -1px;
+}
+header > ul li a {
+  font-family: NotoSansKR;
+  display: block;
+  width: 96px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+}
+header > ul li:first-child a {
+  border-radius: 3px 0 0 3px;
+}
+header > ul li:nth-last-of-type(2) a {
+  border-radius: 0 3px 3px 0;
+}
+header > ul li.join {
+  padding: 0 0 0 10px;
+}
+header > ul li.join a {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.custom-shape-divider-bottom-1636009501 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1636009501 svg {
+  position: relative;
+  display: block;
+  width: calc(110% + 1.3px);
+  height: 234px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1636009501 .shape-fill {
+  fill: #166cea;
+}
+
+.container {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 64rem;
+}
+.video .canvas {
+  object-fit: contain;
+}
+
+.video {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+}

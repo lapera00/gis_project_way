@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <title>WAY</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/blazeface"></script>
+    <script defer src="js/script_2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/default.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="js/test_capture.js"></script>
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/style_popup.css" />
+    <link
+      rel="stylesheet"
+      media="( min-width:0px ) and ( max-width:2000px )"
+      href="css/mobile.css"
+    />
+  </head>
+  <body>
+    <form action="http://172.31.99.211:3003/index" method="post">
+      <div class="custom-shape-divider-bottom-1636009501">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+      <header>
+        <div class="left">
+          <h1>
+            <a href="http://127.0.0.1:5502/main2/public/main.html">WAY</a>
+          </h1>
+          <a href="#a" class="all">all Menu</a>
+          <div class="nav">
+            <h2>Menu</h2>
+            <!-- <li><a href="#a">로그아웃</a></li> -->
+            <nav>
+              <ul>
+                <li><a href="#a">사용자 계정</a></li>
+                <li><a href="#a">보호자 관리</a></li>
+                <li><a href="#a">지인 관리</a></li>
+                <li><a href="#a">경계 인물 관리</a></li>
+                <li><a href="#a">기록 관리</a></li>
+                <li><a href="#a">설정</a></li>
+              </ul>
+            </nav>
+            <div>
+              <!-- <a href="#a">네모네모</a> -->
+              <a href="http://127.0.0.1:5502/main2/public/login.html"
+                >로그아웃</a
+              >
+            </div>
+            <a href="#a" class="close">Close</a>
+            <div class="foot">
+              <a style="line-height: 150%">WHO ARE YOU</a>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li><a href="#a">네모네모</a></li>
+          <li><a href="#a">로그아웃</a></li>
+          <li class="join"><a href="#a">Sign In</a></li>
+        </ul>
+      </header>
+
+      <div class="container">
+        <video
+          id="video"
+          class="video"
+          autoplay="true"
+          style="display: none"
+        ></video>
+        <canvas id="canvas" width="640" height="360"></canvas>
+        <button id="cap">screen shot</button>
+      </div>
+      <a href="#a" class="open">팝업열기</a>
+      <div class="popup">
+        <h2>경계 상황</h2>
+        <div class="txt_center">
+          <a>도움을 요청할 대상을 선택하세요</a>
+        </div>
+        <div class="txt_center">
+          <a href="#a" class="btn_type1">보호자</a>
+          <a href="#b" class="btn_type1">경찰</a>
+          <a href="#c" class="btn_type1">경고음</a>
+        </div>
+        <a href="#a" class="close">닫기</a>
+      </div>
+
+      <div class="dim"></div>
+    </form>
+  </body>
+</html>
