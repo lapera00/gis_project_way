@@ -3,6 +3,9 @@ const router = express.Router();
 
 const mysql = require("mysql");
 
+const multer = require("multer");
+const upload = multer({ dest: "public/images/" }); //dest : 저장 위치
+
 let conn = mysql.createConnection({
   host: "127.0.0.1",
   user: "root",
@@ -41,11 +44,11 @@ router.post("/sigup", function (request, response) {
             }
           );
           response.send(
-            '<script type="text/javascript">alert("성공적으로 가입되었습니다."); document.location.href="http://127.0.0.1:5502/main2/public/login.html";</script>'
+            '<script type="text/javascript">alert("성공적으로 가입되었습니다."); document.location.href="http://127.0.0.1:5502/public/login.html";</script>'
           );
         } else {
           response.send(
-            '<script type="text/javascript">alert("이미 존재하는 아이디 입니다."); document.location.href="http://127.0.0.1:5502/main2/public/signup.html";</script>'
+            '<script type="text/javascript">alert("이미 존재하는 아이디 입니다."); document.location.href="http://127.0.0.1:5502/public/signup.html";</script>'
           );
         }
         response.end();
@@ -66,11 +69,11 @@ router.post("/login", function (request, response) {
     if (err) throw err;
     if (results.length > 0) {
       request.session.loggedin = true;
-      response.redirect("http://127.0.0.1:5502/main2/public/index.html");
+      response.redirect("http://127.0.0.1:5502/public/index.html");
       response.end();
     } else {
       response.send(
-        '<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다."); document.location.href="http://127.0.0.1:5502/main2/public/login.html";</script>'
+        '<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다."); document.location.href="http://127.0.0.1:5502/public/login.html";</script>'
       );
     }
   });
@@ -82,18 +85,19 @@ router.post("/terms", function (request, response, err) {
   let termsPrivacy = request.body.termsPrivacy;
 
   if (chk_all) {
-    response.redirect("http://127.0.0.1:5502/main2/public/signup.html");
+    response.redirect("http://127.0.0.1:5502/public/signup.html");
   } else if (termsService && termsPrivacy) {
-    response.redirect("http://127.0.0.1:5502/main2/public/signup.html");
+    response.redirect("http://127.0.0.1:5502/public/signup.html");
   } else {
     console.log(err);
   }
 });
 
-router.post("/index", function (request, response) {
-  let cap = request.body.cap;
-
-  request(requestOptions).pipe(fs.createWriteStream("sample.jpg"));
+router.post("/upload", upload.single("file"), (req, res) => {
+  console.log("Test");
+  console.log(req);
+  res.json(req.file);
+  console.log(req.file);
 });
 
 module.exports = router;

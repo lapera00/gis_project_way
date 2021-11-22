@@ -26,7 +26,11 @@
     />
   </head>
   <body>
-    <form action="http://172.31.99.211:3003/index" method="post">
+    <form
+      action="http://172.20.10.7:3003/upload"
+      method="post"
+      enctype="multipart/form-data"
+    >    
       <div class="custom-shape-divider-bottom-1636009501">
         <svg
           data-name="Layer 1"
@@ -43,7 +47,7 @@
       <header>
         <div class="left">
           <h1>
-            <a href="http://127.0.0.1:5502/main2/public/main.html">WAY</a>
+            <a href="http://127.0.0.1:5502/public/main.html">WAY</a>
           </h1>
           <a href="#a" class="all">all Menu</a>
           <div class="nav">
@@ -61,9 +65,7 @@
             </nav>
             <div>
               <!-- <a href="#a">네모네모</a> -->
-              <a href="http://127.0.0.1:5502/main2/public/login.html"
-                >로그아웃</a
-              >
+              <a href="http://127.0.0.1:5502/public/login.html">로그아웃</a>
             </div>
             <a href="#a" class="close">Close</a>
             <div class="foot">
@@ -86,8 +88,10 @@
           style="display: none"
         ></video>
         <canvas id="canvas" width="640" height="360"></canvas>
-        <button id="cap">screen shot</button>
+        <input type="submit" value="전송" id="cap"/>
+        
       </div>
+
       <a href="#a" class="open">팝업열기</a>
       <div class="popup">
         <h2>경계 상황</h2>
@@ -101,7 +105,7 @@
         </div>
         <a href="#a" class="close">닫기</a>
       </div>
-
+    </form>
       <div class="dim"></div>
     </form>
   </body>
