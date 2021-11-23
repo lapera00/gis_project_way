@@ -27,10 +27,11 @@
   </head>
   <body>
     <form
-      action="http://172.20.10.7:3003/upload"
+      action="http://172.31.99.211:3003/index"
       method="post"
       enctype="multipart/form-data"
-    >    
+      onsubmit="return false;"
+    >
       <div class="custom-shape-divider-bottom-1636009501">
         <svg
           data-name="Layer 1"
@@ -88,8 +89,7 @@
           style="display: none"
         ></video>
         <canvas id="canvas" width="640" height="360"></canvas>
-        <input type="submit" value="전송" id="cap"/>
-        
+        <button type="button" value="전송" id="cap">sss</button>
       </div>
 
       <a href="#a" class="open">팝업열기</a>
@@ -106,7 +106,7 @@
         <a href="#a" class="close">닫기</a>
       </div>
     </form>
-      <div class="dim"></div>
-    </form>
+
+    <div class="dim"></div>
   </body>
 </html>

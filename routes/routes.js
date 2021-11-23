@@ -3,7 +3,14 @@ const router = express.Router();
 
 const mysql = require("mysql");
 
+const multipart = require("connect-multiparty");
+const multipartMiddleware = multipart();
+const path = require("path");
+const os = require("os");
+const fs = require("fs");
+
 const multer = require("multer");
+const { json } = require("express");
 const upload = multer({ dest: "public/images/" }); //dest : 저장 위치
 
 let conn = mysql.createConnection({
@@ -93,11 +100,11 @@ router.post("/terms", function (request, response, err) {
   }
 });
 
-router.post("/upload", upload.single("file"), (req, res) => {
-  console.log("Test");
-  console.log(req);
-  res.json(req.file);
-  console.log(req.file);
+router.post("/index", upload.single("file"), (req, res) => {
+  let data = req.body.image;
+  var face = data.replace(/^data:image\/\w+;base64,/, "");
+  let decode = Buffer.from(face, "base64");
+  fs.writeFileSync(`./face/${Date.now()}face.jpg`, decode);
 });
 
 module.exports = router;

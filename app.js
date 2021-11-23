@@ -13,6 +13,8 @@ const bodyparser = require("body-parser");
 
 app.use(bodyparser.urlencoded({ extended: false }));
 
+app.use(express.static("."));
+
 app.use(
   expressSession({
     secret: "my key", //이때의 옵션은 세션에 세이브 정보를 저장할때 할때 파일을 만들꺼냐
