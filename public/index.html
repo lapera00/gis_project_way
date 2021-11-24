@@ -16,6 +16,7 @@
     <script src="js/popup.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="js/test_capture.js"></script>
+    <script src="js/time.js"></script>
     <link rel="stylesheet" href="css/default.css" />
     <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/style_popup.css" />
@@ -27,12 +28,12 @@
   </head>
   <body>
     <form
-      action="http://172.31.99.211:3003/index"
+      action="http://192.168.157.172:3003/index"
       method="post"
       enctype="multipart/form-data"
       onsubmit="return false;"
     >
-      <div class="custom-shape-divider-bottom-1636009501">
+      <!-- <div class="custom-shape-divider-bottom-1636009501">
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"
@@ -44,11 +45,11 @@
             class="shape-fill"
           ></path>
         </svg>
-      </div>
+      </div> -->
       <header>
         <div class="left">
           <h1>
-            <a href="http://127.0.0.1:5502/public/main.html">WAY</a>
+            <a href="http://192.168.157.172:5502/public/main.html">WAY</a>
           </h1>
           <a href="#a" class="all">all Menu</a>
           <div class="nav">
@@ -56,21 +57,30 @@
             <!-- <li><a href="#a">로그아웃</a></li> -->
             <nav>
               <ul>
-                <li><a href="#a">사용자 계정</a></li>
+                <li>
+                  <a href="http://192.168.157.172:5502/public/update.html"
+                    >사용자 계정</a
+                  >
+                </li>
                 <li><a href="#a">보호자 관리</a></li>
-                <li><a href="#a">지인 관리</a></li>
                 <li><a href="#a">경계 인물 관리</a></li>
                 <li><a href="#a">기록 관리</a></li>
-                <li><a href="#a">설정</a></li>
+                <li>
+                  <a href="http://192.168.157.172:5502/public/option.html"
+                    >설정</a
+                  >
+                </li>
               </ul>
             </nav>
             <div>
               <!-- <a href="#a">네모네모</a> -->
-              <a href="http://127.0.0.1:5502/public/login.html">로그아웃</a>
+              <a href="http://192.168.157.172:5502/public/login.html"
+                >로그아웃</a
+              >
             </div>
             <a href="#a" class="close">Close</a>
             <div class="foot">
-              <a style="line-height: 150%">WHO ARE YOU</a>
+              <a style="line-height: 100%">WHO ARE YOU</a>
             </div>
           </div>
         </div>
@@ -89,24 +99,56 @@
           style="display: none"
         ></video>
         <canvas id="canvas" width="640" height="360"></canvas>
-        <button type="button" value="전송" id="cap">sss</button>
-      </div>
-
-      <a href="#a" class="open">팝업열기</a>
-      <div class="popup">
-        <h2>경계 상황</h2>
-        <div class="txt_center">
-          <a>도움을 요청할 대상을 선택하세요</a>
-        </div>
-        <div class="txt_center">
-          <a href="#a" class="btn_type1">보호자</a>
-          <a href="#b" class="btn_type1">경찰</a>
-          <a href="#c" class="btn_type1">경고음</a>
-        </div>
-        <a href="#a" class="close">닫기</a>
+        <button type="button" value="전송" id="cap"></button>
       </div>
     </form>
 
+    <a href="#a" class="open" id="pop"></a>
+    <div class="popup">
+      <h2>경계 상황</h2>
+      <div class="txt_center">
+        <a>도움을 요청할 대상을 선택하세요</a>
+      </div>
+      <div class="txt_center">
+        <a href="#a" class="btn_type1">보호자</a>
+        <a href="#b" class="btn_type1">경찰</a>
+        <a href="#c" class="btn_type1" id="btnPlay">경고음</a>
+      </div>
+      <a href="#a" class="close" id="btnPlay">닫기</a>
+      <script>
+        const sound = new Audio();
+        sound.src = "mp3/알람1.mp3";
+
+        const btnPlay = document.getElementById("btnPlay");
+        const btnStop = document.getElementById("btnStop");
+
+        btnPlay.onclick = function () {
+          sound.autoplay = false;
+          sound.loop = false;
+          sound.volume = 0.5;
+          sound.play();
+        };
+        btnStop.onclick = function () {
+          sound.pause();
+          sound.currentTime = 0;
+        };
+      </script>
+    </div>
+    <div
+      id="time"
+      style="
+        position: fixed;
+        flex: 1;
+        width: calc(100% - 140px);
+        bottom: 10px;
+
+        text-align: center;
+        font-size: 13px;
+        font-weight: bold;
+      "
+    >
+      인사돌
+    </div>
     <div class="dim"></div>
   </body>
 </html>

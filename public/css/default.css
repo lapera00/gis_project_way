@@ -64,7 +64,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  height: 63rem;
+  height: 100vh;
   width: 100%;
   background: #fff;
   min-width: 320px;
@@ -240,4 +240,21 @@ textarea[disabled] {
   overflow: visible;
   border-radius: 0.5rem;
   object-fit: contain;
+}
+
+.container-fluid {
+  padding: 10px;
+  margin: 30px auto;
+  margin-top: 50px;
+  width: 80vw;
+  max-width: 64rem;
+  overflow: visible;
+  border-radius: 0.5rem;
+  object-fit: contain;
+  background-color: white;
+  text-align: center;
+}
+
+.star {
+  font-size: 20px;
 }
