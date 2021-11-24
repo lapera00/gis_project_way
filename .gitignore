@@ -1,1 +1,4 @@
 face/
+privkey.pem
+PrivateKeyCert.pfx
+Certificate.crt

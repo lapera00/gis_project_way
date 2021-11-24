@@ -11,6 +11,7 @@ const fs = require("fs");
 
 const multer = require("multer");
 const { json } = require("express");
+const { connect } = require("http2");
 const upload = multer({ dest: "public/images/" }); //dest : 저장 위치
 
 let conn = mysql.createConnection({
@@ -51,11 +52,11 @@ router.post("/sigup", function (request, response) {
             }
           );
           response.send(
-            '<script type="text/javascript">alert("성공적으로 가입되었습니다."); document.location.href="http://192.168.157.172:5502/public/login.html";</script>'
+            '<script type="text/javascript">alert("성공적으로 가입되었습니다."); document.location.href="http://192.168.0.9:5502/public/login.html";</script>'
           );
         } else {
           response.send(
-            '<script type="text/javascript">alert("이미 존재하는 아이디 입니다."); document.location.href="http://192.168.157.172:5502/public/signup.html";</script>'
+            '<script type="text/javascript">alert("이미 존재하는 아이디 입니다."); document.location.href="http://192.168.0.9:5502/public/signup.html";</script>'
           );
         }
         response.end();
@@ -67,7 +68,7 @@ router.post("/sigup", function (request, response) {
 router.post("/login", function (request, response) {
   let id = request.body.id;
   let pw = request.body.pw;
-
+  console.log(request.body);
   conn.connect(); //mysql과 연결
 
   let sql = "SELECT * FROM account_table WHERE id = ? AND pw = ?";
@@ -77,11 +78,11 @@ router.post("/login", function (request, response) {
     if (results.length > 0) {
       // request.session.isLogined = true;
       // request.session.id = id;
-      response.redirect("http://192.168.157.172:5502/public/index.html");
+      response.redirect("https://192.168.0.9:3004/");
       response.end();
     } else {
       response.send(
-        '<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다."); document.location.href="http://192.168.157.172:5502/public/login.html";</script>'
+        '<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다."); document.location.href="http://192.168.0.9:5502/public/login.html";</script>'
       );
     }
   });
@@ -93,9 +94,9 @@ router.post("/terms", function (request, response, err) {
   let termsPrivacy = request.body.termsPrivacy;
 
   if (chk_all) {
-    response.redirect("http:/192.168.157.172:5502/public/signup.html");
+    response.redirect("http:/192.168.0.9:5502/public/signup.html");
   } else if (termsService && termsPrivacy) {
-    response.redirect("http://192.168.157.172:5502/public/signup.html");
+    response.redirect("http://192.168.0.9:5502/public/signup.html");
   } else {
     console.log(err);
   }
@@ -109,9 +110,7 @@ router.post("/index", upload.single("file"), (req, res) => {
 });
 
 router.post("/index2", function (request, response) {
-  response.send(
-    '<script type="text/javascript">alert("타이머 슈바."); document.location.href="http://192.168.157.172:5502/public/index.html";</script>'
-  );
+  response.redirect("https://192.168.0.9:3004/");
 });
 
 module.exports = router;

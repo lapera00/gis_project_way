@@ -5,9 +5,10 @@ var serveStatic = require("serve-static"); //특정 폴더의 파일들을 특�
 var path = require("path");
 var cookieParser = require("cookie-parser");
 const fs = require("fs");
+const httpsLocalhost = require("https-localhost")();
 
-const privateKey = fs.readFileSync("./config/key.pem");
-const certificate = fs.readFileSync("./config/csr.pem");
+const privateKey = fs.readFileSync("./privkey.pem");
+const certificate = fs.readFileSync("./Certificate.crt");
 const options = {
   key: privateKey,
   cert: certificate,
@@ -31,7 +32,7 @@ const bodyparser = require("body-parser");
 
 app.use(bodyparser.urlencoded({ extended: false }));
 
-app.use(express.static("."));
+app.use("/", express.static("./public"));
 
 // app.use(
 //   session({
@@ -43,8 +44,20 @@ app.use(express.static("."));
 // );
 
 app.use(router);
-
+// const httpsServer = https.createServer(options, app);
+// httpsServer.listen(3003, function () {
+//   console.log("HTTPS server listening on port " + 3003);
+// });
+// const certs = await httpsLocalhost.getCerts();
+https.createServer(options, app).listen(3004, function () {});
 http.createServer(app).listen(3003, function () {});
-//https.createServer(options, app).listen(3004, function () {});
-//app.listen(3003);
+// http
+//   .createServer(function (req, res) {
+//     res.writeHead(301, {
+//       Location: "https://" + req.headers["host"] + req.url,
+//     });
+//     res.end();
+//   })
+//   .listen(3003);
+// app.listen(3003);
 //3003-server, 3306-mysql, 5500-html
