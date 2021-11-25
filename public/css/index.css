@@ -22,10 +22,13 @@ header a {
   color: rgb(100, 100, 100);
 }
 header h1 {
+  text-align: center;
+  width: 700px;
   float: left;
-  padding: 0 108px 0 0;
+  padding: 0 0 0 0;
 }
 header h1 a {
+  text-align: center;
   font-family: abster;
   width: 100%;
   font-size: 70px;
@@ -53,7 +56,6 @@ header nav a:hover:before {
   width: 100%;
 }
 header .close,
-header .all,
 header .left > div > div,
 header h2 {
   left: 100%;
@@ -121,6 +123,7 @@ header > ul li.join a {
 }
 
 .container {
+  padding-top: 110px;
   margin: 30px auto;
   width: 100%;
   max-width: 64rem;
