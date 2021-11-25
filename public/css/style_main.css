@@ -30,11 +30,13 @@
   text-decoration: none;
   color: white;
   font-family: abster;
-  font-size: 50px;
+  font-size: 80px;
 }
 
 .container .hero {
+  margin-top: 140px;
   position: absolute;
+  width: 700px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -45,8 +47,8 @@
 }
 
 .container .hero h2 {
-  font-size: 60px;
-  margin-bottom: 20px;
+  font-size: 75px;
+  margin-bottom: 200px;
 }
 
 .container .hero p {
@@ -58,9 +60,9 @@
   border: 2px solid #f7f8ff;
   color: white;
   font-weight: bolder;
-  font-size: 15px;
-  padding: 10px 20px;
-  border-radius: 20px;
+  font-size: 3rem;
+  padding: 20px 50px;
+  border-radius: 3rem;
   margin-top: 10px;
   outline: none;
   cursor: pointer;

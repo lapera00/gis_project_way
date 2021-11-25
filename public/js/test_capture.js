@@ -8,7 +8,7 @@ $(function () {
       formData.append("image", file);
 
       $.ajax({
-        url: "http://192.168.0.9:3003/index",
+        url: "https://172.31.99.211:3004/index",
         type: "POST",
         dataType: "josn",
         data: formData,

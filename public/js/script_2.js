@@ -2,15 +2,19 @@ let video = document.getElementById("video");
 let model;
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
+let camp = "user";
+//environment
 
 const setupCamera = () => {
   navigator.mediaDevices
     .getUserMedia({
-      video: { width: 1000, height: 1000 },
+      video: { facingMode: camp, width: 1000, height: 1000 },
+
       audio: false,
     })
     .then((stream) => {
       video.srcObject = stream;
+      //video.facingMode = facingMode;
     });
 };
 

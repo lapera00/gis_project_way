@@ -3,6 +3,11 @@
   font-family: NotoSansKR;
   src: url("../font/NotoSansKR-Regular.otf") format("otf");
 }
+@font-face {
+  font-family: abster;
+  src: url("../font/abster-webfont.woff") format("woff");
+}
+
 @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
 
 body {
@@ -21,11 +26,10 @@ header h1 {
   padding: 0 108px 0 0;
 }
 header h1 a {
-  display: block;
-  width: 350px;
-  height: 41px;
-  background: url("../images/title_B.png");
-  color: transparent;
+  font-family: abster;
+  width: 100%;
+  font-size: 70px;
+  color: #fff;
 }
 header nav a {
   display: block;
@@ -71,7 +75,7 @@ header > ul li {
   margin-left: -1px;
 }
 header > ul li a {
-  font-family: NotoSansKR;
+  font-family: "Noto Sans KR", sans-serif;
   display: block;
   width: 96px;
   height: 38px;
