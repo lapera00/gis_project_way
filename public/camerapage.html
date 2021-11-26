@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <title>WAY</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/default.js"></script>
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/style_popup.css" />
+    <link
+      rel="stylesheet"
+      media="( min-width:0px ) and ( max-width:2000px )"
+      href="css/mobile.css"
+    />
+  </head>
+
+  <body>
+    <form
+      action="http://172.31.99.211:3003/index"
+      method="post"
+      enctype="multipart/form-data"
+      onsubmit="return false;"
+    >
+      <header>
+        <div class="left">
+          <a href="#a" class="all">all Menu</a>
+          <h1>
+            <a href="http://172.31.99.211:5502/public/main.html">WHO ARE YOU</a>
+          </h1>
+          <div class="nav">
+            <h2>WHO ARE YOU</h2>
+            <!-- <li><a href="#a">로그아웃</a></li> -->
+            <nav>
+              <ul>
+                <li>
+                  <a href="http://172.31.99.211:5502/public/update.html"
+                    >사용자 계정</a
+                  >
+                </li>
+                <li><a href="#a">보호자 관리</a></li>
+                <li><a href="#a">경계 인물 관리</a></li>
+                <li>
+                  <a href="http://172.31.99.211:5502/public/camerapage.html"
+                    >기록 관리</a
+                  >
+                </li>
+                <li>
+                  <a href="http://172.31.99.211:5502/public/option.html"
+                    >설정</a
+                  >
+                </li>
+              </ul>
+            </nav>
+            <div>
+              <!-- <a href="#a">네모네모</a> -->
+              <a href="http://172.31.99.211:5502/public/login.html">로그아웃</a>
+            </div>
+            <a href="#a" class="close">Close</a>
+            <div class="foot">
+              <a style="line-height: 100%">WHO ARE YOU</a>
+            </div>
+          </div>
+        </div>
+        <ul>
+          <li><a href="#a">네모네모</a></li>
+          <li><a href="#a">로그아웃</a></li>
+          <li class="join"><a href="#a">Sign In</a></li>
+        </ul>
+      </header>
+
+    <div class= "container">
+      <div class = "row" >
+        <div class = "my-2">
+          <div class = "col mx-2" style="text-align:center;">
+            <br>
+            <br>
+            <br>
+            <img id="img" src="imgs/img1.jpg" class="img" style="width:1000px; height:1500px;">
+            <br>
+            <br>
+            <button onclick="recode_before()" type="submit" id="before" style="width:6rem; border:2px solid #0a0a0a; border-radius: 0.5rem">이전 이미지</button>
+
+            <button onclick="recode_after()" type="submit" id="after" style="width:6rem; border:2px solid #0a0a0a; border-radius: 0.5rem">다음 이미지</button>
+            <button type="submit" id="register" style="width:6rem; border:2px solid #0a0a0a; border-radius: 0.5rem"><a href="/contacts/new" style="color: black; text-decoration:none;">경계 등록</a></button>
+            <script>
+              let counter = 1
+              function recode_after(){
+                  ++counter
+                  document.getElementById("img").src=`imgs/img${counter}.jpg`
+              }
+              function recode_before(){
+                --counter
+                if(counter === 0){
+                  ++counter
+                }
+                document.getElementById("img").src=`imgs/img${counter}.jpg`
+              }
+            </script>
+
+          </div>
+          <br>
+
+          <table class="table">
+              <thead>
+                  <tr>
+                      <th scope="col" style="width:8rem;">이미지 번호</th>
+                      <th scope="col" style="width:20rem;">날짜</th>
+                      <th scope="col">이름</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                  </tr>
+                  <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                  </tr>
+                  <tr>
+                      <th scope="row">3</th>
+                      <td>Larry the Bird</td>
+                      <td>dfdf</td>
+                  </tr>
+              </tbody>
+          </table>
+
+          </div>
+        </div>
+
+        <h1 id = "radiobutton"></h1>
+
+      </div>
+    </div>
+    <div class="dim"></div>
+    </form>
+  </body>
+</html>

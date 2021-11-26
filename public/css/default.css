@@ -251,7 +251,7 @@ textarea[disabled] {
   overflow: visible;
   border-radius: 0.5rem;
   object-fit: contain;
-  background-color: white;
+  background-color: #ffffff;
   text-align: center;
 }
 

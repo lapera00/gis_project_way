@@ -94,6 +94,7 @@ header .nav.on nav a {
   height: 100px;
   line-height: 100px;
   color: #111;
+  font-weight: lighter;
 }
 header .nav.on nav a:before {
   display: none;
