@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <div class="container contact contact-edit">
+      <h2>Edit</h2>
+      <form class="contact-form" action="/contacts/<%= contact._id %>?_method=put" method="post">
+        <div class="form-group">
+          <label for="name">이름</label>
+          <input type="text" id="name" name="name" value="<%= contact.name %>" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="memo">메모</label>
+          <input type="text" id="memo" name="memo" value="<%= contact.memo %>" class="form-control">
+        </div>
+        <!-- <div>
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" name="phone" value="<%= contact.phone %>">
+        </div> -->
+        <div>
+          <button type="submit" class="btn btn-primary">변경완료</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
