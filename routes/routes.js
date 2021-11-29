@@ -94,7 +94,7 @@ router.post("/login", function (request, response) {
   let id = request.body.id;
   let pw = request.body.pw;
   console.log(request.body);
-  conn.connect(); //mysql과 연결
+  conn.connect();
 
   let sql = "SELECT * FROM account_table WHERE id = ? AND pw = ?";
 
@@ -103,8 +103,6 @@ router.post("/login", function (request, response) {
     if (results.length > 0) {
       request.session.isLogined = true;
       request.session.id = id;
-      // console.log(results);
-      // console.log(id);
       response.redirect("https://192.168.84.172:3004/");
       response.end();
     } else {
