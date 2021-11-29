@@ -77,11 +77,11 @@ router.post("/sigup", function (request, response) {
             }
           );
           response.send(
-            '<script type="text/javascript">alert("성공적으로 가입되었습니다."); document.location.href="http://172.31.99.211:5502/public/login.html";</script>'
+            '<script type="text/javascript">alert("성공적으로 가입되었습니다."); document.location.href="http://192.168.84.172:5502/public/login.html";</script>'
           );
         } else {
           response.send(
-            '<script type="text/javascript">alert("이미 존재하는 아이디 입니다."); document.location.href="http://172.31.99.211:5502/public/signup.html";</script>'
+            '<script type="text/javascript">alert("이미 존재하는 아이디 입니다."); document.location.href="http://192.168.84.172:5502/public/signup.html";</script>'
           );
         }
         response.end();
@@ -105,11 +105,11 @@ router.post("/login", function (request, response) {
       request.session.id = id;
       // console.log(results);
       // console.log(id);
-      response.redirect("https://172.31.99.211:3004/");
+      response.redirect("https://192.168.84.172:3004/");
       response.end();
     } else {
       response.send(
-        '<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다."); document.location.href="http://172.31.99.211:5502/public/login.html";</script>'
+        '<script type="text/javascript">alert("로그인 정보가 일치하지 않습니다."); document.location.href="http://192.168.84.172:5502/public/login.html";</script>'
       );
     }
   });
@@ -121,9 +121,9 @@ router.post("/terms", function (request, response) {
   let termsPrivacy = request.body.termsPrivacy;
 
   if (chk_all) {
-    response.redirect("http://172.31.99.211:5502/public/signup.html");
+    response.redirect("http://192.168.84.172:5502/public/signup.html");
   } else if (termsService && termsPrivacy) {
-    response.redirect("http://172.31.99.211:5502/public/signup.html");
+    response.redirect("http://192.168.84.172:5502/public/signup.html");
   } else {
     console.log(err);
   }
@@ -137,7 +137,7 @@ router.post("/index", upload.single("file"), (req, res) => {
 });
 
 router.post("/index2", function (request, response) {
-  response.redirect("https://172.31.99.211:3004/");
+  response.redirect("https://192.168.84.172:3004/");
 });
 
 router.post("/update", function (request, response) {

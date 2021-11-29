@@ -3,3 +3,4 @@ privkey.pem
 PrivateKeyCert.pfx
 Certificate.crt
 public/imgs/
+public/js/sample_test.js
